@@ -1,0 +1,23 @@
+<h3>
+    Contato
+</h3>
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Email</th>
+            <th scope="col">Telefone</th>
+            <th scope="col">Endereço</th>
+            <th scope="col">Opções</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let contact of listSchedules">
+            <th>{{contact.nome}}</th>
+            <td>{{contact.email}}</td>
+            <td>{{contact.telefone}}</td>
+            <td>{{contact.endereco}}</td>
+            <td><button class="btn-danger" (click)="deleteContact(contact)">Apagar</button></td>
+        </tr>
+    </tbody>
+</table>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Schedules } from 'src/app/schedules';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Schedules } from 'src/app/model/schedules';
 import { ScheduleService } from 'src/app/services/schedule.service';
-import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -17,19 +17,11 @@ export class ScheduleComponent implements OnInit {
 
   constructor(
     public scheduleService: ScheduleService,
-    private formBuilder: FormBuilder,
+    private formBuilder: FormBuilder
   ) { }
 
   ngOnInit(): void {
     this.configForm();
-    this.listContacts();
-  }
-
-
-  listContacts() {
-    this.scheduleService.get().subscribe((contatos: Schedules[]) => {
-      this.listSchedules = contatos
-    });
   }
 
   configForm() {
@@ -50,12 +42,6 @@ export class ScheduleComponent implements OnInit {
     });
   }
 
-  deleteContact(id) {
-    this.scheduleService.delete(id).subscribe(success => {
-      Swal.fire('', 'Deletado com sucesso', 'success')
-
-    });
-  }
 
   cleanForm() {
     this.form.reset();

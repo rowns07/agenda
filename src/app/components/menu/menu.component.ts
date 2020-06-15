@@ -19,12 +19,8 @@ export class MenuComponent implements OnInit {
     this.scheduleService.display = true;
   }
 
-  teste(): boolean {
-    if (this.scheduleService.display) {
-      return this.scheduleService.display = false;
-    }else{
-      return this.scheduleService.display = true;
-    };
+  closeScheduleForm() {
+    this.scheduleService.display = false;
   }
 
 }

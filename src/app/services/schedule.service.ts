@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Schedules } from '../schedules';
+import { Schedules } from '../model/schedules';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';

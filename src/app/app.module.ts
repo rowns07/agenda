@@ -8,12 +8,14 @@ import { MenuComponent } from './components/menu/menu.component';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ListContactsComponent } from './components/list-contacts/list-contacts.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ScheduleComponent,
-    MenuComponent
+    MenuComponent,
+    ListContactsComponent
   ],
   imports: [
     BrowserModule,
